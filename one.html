@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>one</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .content{
+            width: 7.5rem;
+            height:13.34rem;
+            background: url(img/background_1.jpg);
+            background-size:100% 100%; 
+            position: relative;
+            top: 0;
+            color: #fff;
+        }
+        .wenan{
+            width: 7.5rem;
+            position: absolute;
+            top: 1.6rem;
+        }
+        .wenano{
+            font-size: 0.7rem;
+        }
+        .wenan_left{
+            padding-left: 0.4rem;
+        }
+        .wenant{
+            font-size: 1.2rem;
+        }
+        .wenans{
+            font-size: 0.54rem;
+        }
+        .sone{
+            font-size: 0.3rem;
+            margin-top: 1.2rem;
+        }
+        .stwo{
+            font-size: 0.3rem;
+        }
+
+        .sTest{
+            margin-bottom: 3.4rem;
+        }
+        .btn{
+            width: 4.4rem;
+            height:2.16rem ;
+            background: url(img/Button.png) no-repeat;
+            background-size:100% 100%; 
+            margin: 0 auto;
+            font-size: 0.3rem;
+            text-align: center;
+        }
+        .btn div:nth-child(1){
+            padding-top: 0.4rem
+        }
+        
+        .btn div{
+            animation: change 2s  infinite;
+        }
+        .bText{
+            text-align: center;
+            font-size: 0.3rem;
+            font-style:oblique;
+        }
+
+        @keyframes change {
+
+        0% {color: #730702;}
+        20% {color: #730702;}
+        75% {color:#fff;}
+        100% {color:#fff;}
+        }
+        
+        @font-face {
+        font-family: HYYakuHei;
+        src:url(js/HYYaKuHeiW.ttf);
+       }
+       .logo{
+         position: absolute;
+         top: 0.4rem;
+         right: 0.6rem;
+       }
+       .logo img{
+        width: 1.07rem;
+        height: 1.25rem;
+       }
+        .test{
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+      /*响应式布局 start*/
+
+        function setRootFontSize() {
+
+        var width = document.documentElement.clientWidth, fontSize;
+
+        if (width > 750) { width = 750 }
+
+        fontSize = (width / 7.5);//这里除于7.5的意思就是100px等于1rem;
+
+        document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px';
+
+        }
+
+        setRootFontSize();
+
+        window.addEventListener('resize', function() {
+
+        setRootFontSize();
+
+        }, false);
+
+        /*响应式布局 end*/
+    </script>
+</head>
+<body style="background: #fff;">
+<div class="content">
+    <div class="logo"><img src="img/logo.png" alt=""></div>
+    <div class='wenan'>
+     <div class="wenan_left">
+        <div style="font-family:HYYakuHei;" class="wenano test">收到请回答！</div>
+        <div style="font-family:HYYakuHei;"  class="wenant test">提质增效</div>
+        <div style="font-family:HYYakuHei;"  class="wenans test">石油人在一起。</div>
+        <div class="sTest">
+            <div  class="sone test">看看有多少石油人</div>
+            <div  class="stwo test">在这里和你一起在为提质增效努力奋斗</div>
+        </div>
+     </div>
+    <div class="btn test">
+         <div style="font-family:HYYakuHei;">呼叫奋战在</div>
+         <div style="font-family:HYYakuHei;">同一地点的石油人</div>
+    </div>
+    <div class="bText test">
+        <div style="font-family:HYYakuHei;">战严冬 转观念</div>
+        <div style="font-family:HYYakuHei;">勇担当 上台阶</div>
+    </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function(){
+        /*动画时间*/
+        var timer=500;
+        var n=0;
+        function show()
+        {
+            if(n<10)
+                $('.test').eq(n).fadeIn(timer,function(){
+                    show();
+                    n++;
+                });
+        }
+        setTimeout(show(),timer);
+    });
+</script>
+</html>
